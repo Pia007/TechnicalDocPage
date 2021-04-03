@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Technical Doc Project</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Getting Started with CSS</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Starting_with_some_HTML">Starting with some HTML</a></li>
+            <li><a class="nav-link" href="#Adding_CSS_to_a_Document">Adding CSS to a Document</a></li>
+            <li><a class="nav-link" href="#Styling_HTML_Elements">Styling HTML Elements</a></li>
+            <li><a class="nav-link" href="#Change_the_Behavior_of_Elements">Change the Behavior of Elements</a></li>
+            <li><a class="nav-link" href="#Adding_a_Class">Adding a Class</a></li>
+            <li><a class="nav-link" href="#Styling_Based_on_Location">Styling Based on Location</a></li>
+            <li><a class="nav-link" href="#Styling_Based_on_State">Styling Based on State</a></li>
+            <li><a class="nav-link" href="#Join_Selectors_and_Combinators">Join Selectors and Combinators</a></li>
+            <li><a class="nav-link" href="#Conclusion">Conclusion</a></li>
+        </ul>
+        </header>
+    </nav>
+
+    <main id="main-doc">
+        <section id="Introduction" class="main-section">
+            <header>Introduction</header>
+            <article>
+                <p>Cascading Style Sheets, <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS" alt="link to CSS Resource">CSS</a>, is a style sheet language that specifies how documents are presented to users. The documents
+                    are text files structured using Hyper Text Markup Language, <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML" alt="Link to a Brief History of HTML">HTML</a>. </p>
+                <p>Objectives:</p>
+                <ul>
+                    <li>Understand the basics of linking a CSS document to and HTML file.</li>
+                    <li>Apply simple text formating using CSS.</li>
+                </ul>
+                <p>Prerequisites</p>
+                <ul>
+                    <li>Have basic computer literacy.</li>
+                    <li>Have basic software installed.</li>
+                    <li>Have basic knoweledge of working with files.</li>
+                    <li>Understand <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics" alt="Introduction to HTML">HTML basics</a>.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="Starting_with_some_HTML" class="main-section">
+            <header>Starting with some HTML</header>
+            <article>
+                <p>Begin by copying the code below and save it as <mark>index.html</mark> on your computer. </p>
+                <pre>
+               &lt;!doctype html&gt;
+               &lt;html lang="en"&gt;
+               &lt;head&gt;
+               &ensp;&ensp;&ensp;&ensp;&lt;meta charset="utf-8"&gt;
+               &ensp;&ensp;&ensp;&ensp;&lt;title&gt;Getting started with CSS&lt;/title&gt;
+               &lt;/head&gt;
+          
+               &lt;body&gt;
+          
+               &ensp;&ensp;&ensp;&ensp;&lt;h1&gt;I am a level one heading&lt;/h1&gt;
+          
+               &ensp;&ensp;&ensp;&ensp;&lt;p&gt;This is a paragraph of text. In the text is a &lt;span&gt;span elelment&lt;/span&gt; and also a &lt;a href="http://example.com"&gt;link&lt;/a&gt;.&lt;/p&gt;
+          
+               &ensp;&ensp;&ensp;&ensp;&lt;p&gt;This is a second paragraph. it contains an &lt;em&gt;empahasized&lt;/em&gt; element.&lt;/p&gt;
+          
+               &ensp;&ensp;&ensp;&ensp;&lt;ul&gt;
+               &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;li&gt;Item one&lt;/li&gt;
+               &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;li&gt;Item two&lt;/li&gt;
+               &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&lt;li&gt;Item&lt;em&gt;three&lt;/em&gt;&lt;/li&gt;
+               &ensp;&ensp;&ensp;&ensp;&lt;/ul&gt; 
+          
+               &lt;/body&gt; 
+               
+               &lt;/html&gt;
+            </pre>
+            </article>
+        </section>
+
+        <section id="Adding_CSS_to_a_Document" class="main-section">
+            <header>Adding CSS to a Document</header>
+            <article>
+                <p>The HTML document needs to know that there are CSS rules available before they can be applied.</p>
+                <p>There are <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured" alt="Link to three methods of applying CSS">three different ways to apply CSS</a>. </p>
+                <ul>
+                    <li>Inline</li>
+                    <li>Internal</li>
+                    <li>External</li>
+                </ul>
+                <p>For introductory pruposes, the most common and useful way is to link CSS in the head of the HTML document.</p>
+                <p>Create a folder in the same folder as your HTML document, <mark>index.html</mark>, and save it as <mark>styles.css</mark>. The <mark>.css</mark> extension shows that the file is a CSS file.</p>
+                <p>Add the line of code below somewhere inside the <mark>&lt;head&gt;</mark> of the HTML document to link <mark>styles.css</mark> to <mark>index.html</mark>.</p>
+                <code class="link">
+              &lt;link rel="stylesheet" href="styles.css"&gt;   
+            </code>
+                <p>Each part of the code has a role in informing the browser.</p>
+                <ul>
+                    <li><mark>&lt;link&gt;</mark> element tells the broswer that there is an external source, the CSS file.</li>
+                    <li><mark>rel</mark> attribute specifies the relationship between the document and the linked resource.</li>
+                    <li><mark>href</mark> attribute specifies the link's location.</li>
+                </ul>
+                <p>Use your code editor to add the level one heading declaration below to your CSS file:</p>
+                <pre>
+               h1 {
+                &ensp;&ensp;color: red; 
+               }
+            </pre>
+                <p>Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of the document should be red. If its not, check for accuracy.</p>
+            </article>
+        </section>
+
+        <section id="Styling_HTML_Elements" class="main-section">
+            <header>Styling HTML Elements</header>
+            <article>
+                <p>Making the heading red demonstrated that an HTML element can be targeted and styled by using an <em>element selector</em>, a selector that selects all elements with the matching name.</p>
+                <p>Use the selector <mark>p</mark> to turn all paragraphs in the document green.</p>
+                <pre>  
+              p {
+              &ensp;&ensp;color: green;
+              }
+            </pre>
+                <p>Target multiple selectors, by using a comma to seperate the selectors. The rule below turns all paragraphs and list items green.</p>
+                <pre>  
+              p, li {
+              &ensp;&ensp;color: green;
+              }
+            </pre>
+            </article>
+        </section>
+
+        <section id="Change_the_Behavior_of_Elements" class="main-section">
+            <header>Change the Behavior of Elements</header>
+            <article>
+                <p>All modern browsers have internal stylesheets that contain default styles. These styles apply to all of the pages by default. They prevent the text from running together, resulting in having to style everything from scratch.</p>
+                <p>A good example of a browser' default styling is an unordered list, <mark>&lt;ul&gt;</mark>. By default the list items, <mark>&lt;li&gt;</mark> are bulleted.</p>
+                <p>Try adding the code below to your CSS.</p>
+                <pre>  
+              li {
+              &ensp;&ensp;list-style-type: none;
+              }
+            </pre>
+                <p>One of the codes below takes a different approach to bulletting. Try them:</p>
+                <code>
+              list-style-type: circle;
+            </code>
+                <code>
+              list-style-type: "\1F44D";
+            </code>
+                <p>In addition to a circle bullet point, you should have gotten a "thumbs-up". Check the MDN for more information about the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type" alt="link to CSS list-style-type property resource">list-style-property<a/>.</p>
+          </article>
+        </section>  
+        
+        <section id="Adding_a_Class" class="main-section">
+          <header>Adding a Class</header>
+          <article>
+            <p>In your, HTML document, add a class element to the second list item. The code should look like this:</P>
+            <pre>
+              &lt;ul&gt;
+              &ensp;&ensp;&ensp;&ensp;&lt;li&gt;Item one&lt;/li&gt;
+              &ensp;&ensp;&ensp;&ensp;&lt;li class="special"&gt;Item two&lt;/li&gt;
+              &ensp;&ensp;&ensp;&ensp;&lt;li&gt;Item&lt;em&gt;three&lt;/em&gt;&lt;/li&gt;
+              &lt;/ul&gt; 
+            </pre>
+            <p>In your CSS you can target the class of <mark>special</mark> by creating a selector that starts with a full stop character.</p>
+            <p>Try adding the following code to your CSS file.</p>
+            <pre>
+              .special {
+              &ensp;&ensp;color: orange;
+              &ensp;&ensp;font-weight: bold;
+              }
+            </pre>
+            <p>The class of <mark>special</mark> can be added to any element that you want to have the same look as the list item.</p>
+            <p>In the code below, the rules have a selector that lists the HTML element selector along with the class. According to the rule below, any <mark>li</mark> element that has a class of special will be styled orange with bold font. </p>
+            <pre>
+              li.special {
+              &ensp;&ensp;color: orange;
+              &ensp;&ensp;font-weight: bold;
+              }
+            </pre>
+            <p>After including the class with the HTML element selector, the class can no longer be added to an another element.   The class cannot be added to another element unless element is added to the list of selectors. For example, in the CSS rule below, the class of special was listed along with the <mark>li</mark> element. The <mark>&lt;span&gt;</mark> element is added to the list of selectors in order to apply the orange color and bold font.</p>
+            <pre>
+              li.special,
+              span.special {
+              &ensp;&ensp;color: orange;
+              &ensp;&ensp;font-weight: bold;
+              }
+            </pre>
+          </article>
+        </section>  
+      
+        <section id="Styling_Based_on_Location" class="main-section">
+          <header>Styling Based on Location</header>
+          <article>
+            <p>There are occassions when something is styled differntly based on its location in a document. Ther several selectors that can help accomplish this. In the initial HTML code, two <mark>&lt;em&gt;</mark> were used. One inside the paragraph and the other inside a list item. To select only the <mark>&lt;em&gt;</mark> nested inside a <mark>&lt;li&gt;</mark>, a selector called the <b>descendant combinator</b>, a space between two selectors is used.</p>
+            <p>Add the following rule to your stylesheet:</p>
+            <pre>
+                .li em {
+                &ensp;&ensp;color: rebeccapurple;
+                }
+            </pre>
+            <p>In the document, only the <mark>&lt;em&gt;</mark> in the third list item turned purple.</p>
+            <p>Additionally, a paragraph can be styled when it comes directly after a heading at the same hierarchy level in HTML by using an <b>adjacent sibling combinator</b>, a <mark>+</mark> between the selectors.</p>
+            <p>Add the following rule to your stylesheet:</p>
+            <pre>
+                h1 + p {
+                &ensp;&ensp;font-size: 200%;
+                }
+            </pre>
+            <p>The font sizes of header one and the paragraph immediately are twice as large as they were originally.</p>
+          </article>
+        </section>  
+      
+        
+        <section id="Styling_Based_on_State" class="main-section">
+          <header>Styling Based on State</header>
+          <article>
+            <p>The last type of styling for this tutorial is styling things by their state. The best way to describe this type of styling is when styling links. To style a link, the <mark>&lt;a&gt;</mark>(anchor) element is targeted. The link has different states based on whether it is unvisited, visited, being hovered over, focused via the keyboard, or in the process of being clicked (activated).</p>
+            <p>The CSS below styles unvisited links pink and visited links green.</p>
+            <pre>
+                a:link  {
+                &ensp;&ensp;color: pink;
+                }
+      
+                a:visited {
+                &ensp;&ensp;color: green;
+                }
+            </pre>
+            <p>The way the link looks when the user hovers over it, for example removing the underline, can be achieved by the rule below:</p>
+            <pre>
+                a:hover {
+                &ensp;&ensp;text-decoration: none;
+                }
+            </pre>
+            <p>Try replacing the value of the text-decoration property with the values below:</p>
+            <code>
+              text-decoration: underline;
+            </code>
+            <code>
+              text-decoration: underline dotted red;
+            </code>
+          </article>
+        </section>  
+      
+        <section id="Join_Selectors_and_Combinators" class="main-section">
+          <header>Join Selectors and Combinators</header>
+          <article>
+            <p>Multiple selectors and combinators can be combined together. For example:</p>
+            <pre> 
+                /* selects any &lt;span&gt that is inside a &lt;p&gt;, which is inside an &lt;article&gt; */
+                article p span { ... }
+      
+                /* selects any &lt;p&gt; that comes directly after a &lt;ul&gt;, which comes directly after an &lt;h1&gt; */
+                h1 + ul + p { ... }
+            </pre>
+            <p>Multiple types can be combined together too. Try the following code:</p>
+            <pre>
+                body h1 + p .special {
+                &ensp;&ensp;color: yellow;
+                &ensp;&ensp;bagkground-color: black;
+                &ensp;&ensp;padding: 5px;
+                }
+            </pre>
+            <p>The code above, will sytle any element with the class of <mark>special</mark>, which is inside a <mark>p</mark>, which comes just after an <mark>&lt;h1&gt;</mark>, which is inside a <mark>&lt;body&gt;</mark>. Thus, in the original HTML, the only element styled is <mark>&lt;span class="special"&gt;</mark>.</p>
+          </article>
+        </section>  
+        
+        <section id="Conclusion" class="main-section">
+          <header>Conclusion</header>
+          <article>
+            <p>In this tutorial, a number of ways of styling a document using CSS were discussed. CSS is a robust styling language that cannot be learned overnight. So, if at this point, you are feeling overwhelmed or confused, let that be your motivation. Every developer has been right where you are right now. At times, its cyclical. Developers are constantly evolving as more sophisticated technologies become available. The key is to allow yourself to stay hungry for knowledge and be a work in progress.</p>
+          </article>
+        </section>
+      
+        <footer>The content in this tutorial was obtained from <a href="https://developer.mozilla.org/en-US/" alt="MDN Web Docs">MDN Web Docs</a>.
+                    </footer>
+
+    </main>
+
+</body>
+
+</html>
